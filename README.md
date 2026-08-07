@@ -3,12 +3,12 @@ This extension is designed to improve the experience of claude.ai, providing vis
 
 ## Roadmap
 
-- [ ] Usage Viewer
+- [x] Usage Viewer
     - [x] Working on free tier
-    - [ ] Seamless integration with website
+    - [x] Seamless integration with website
         - [x] Sidebar integration
-            - [ ] Proper sidebar closed state
-        - [ ] Chat input bottom toolbar usage indicator 
+            - [x] Proper sidebar closed state
+        - [x] Chat input bottom toolbar usage indicator 
 - [ ] Themes
     - [ ] One Dark Pro
     - [ ] Catpuccin
