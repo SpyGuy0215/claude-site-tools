@@ -14,9 +14,6 @@ This extension is designed to improve the experience of claude.ai, providing vis
     - [ ] Catpuccin
     - [ ] Some sort of light mode theme (Claude based)
     - [ ] And more?
-- [ ] Chat pinning
-    - [ ] Functionality
-    - [ ] Clean, native-looking UI integration
 - [ ] Adding /compact to web UI
     - [ ] Connect to third-party API
     - [ ] Intercept model completion call and replace text with AI summary (?)

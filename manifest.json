@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Claude Site Tools",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "Browser extension to enhance the Claude website with usage tracking, themes, and more.",
 
     "permissions": ["storage", "webRequest"],
@@ -18,14 +18,23 @@
     },
 
     "background": {
-        "service_worker": "background.js",
-        "scripts": ["background.js"]
+        "service_worker": "src/background.js",
+        "scripts": [
+            "src/background.js"
+        ]
     },
 
     "content_scripts": [
         {
             "matches": ["https://claude.ai/*"],
-            "js": ["claude-site-tools.js"],
+            "js": [
+                "src/claude-api.js",
+                "src/usage-viewer/toolbar-widget.js",
+                "src/usage-viewer/sidebar-widget.js",
+                "src/usage-viewer/utils.js",
+                "src/usage-viewer/index.js",
+                "src/content-script.js"
+            ],
             "css": ["styles.css"],
             "run_at": "document_idle"
         }
