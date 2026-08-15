@@ -32,7 +32,7 @@ function injectSidebarUsageBar() {
                 <div id="claude-site-tools-usage-bar-container" style="width: 85%; height: 3px; background-color: #444; border-radius: 0.5rem; overflow: hidden;">
                     <div id="claude-site-tools-usage-bar" style="width: 0%; height: 100%; background-color: #2a78d6;"></div>
                 </div>
-                <span>0%</span>
+                <span style="margin-left: 0.3rem;">0%</span>
             </div>
             <span id='5-hour-reset-time' style='font-size: 0.8rem; color: #888;'>Resets at: --:--</span>
         </div>
