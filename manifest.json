@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Claude Site Tools",
     "version": "1.0.0",
-    "description": "Browser extension to enhance the Claude website with usage tracking, themes, and more.",
+    "description": "Browser extension to enhance the Claude website with usage tracking",
 
     "permissions": ["storage", "webRequest"],
 
