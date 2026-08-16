@@ -13,6 +13,17 @@ function ensureUIInjected() {
     }
 }
 
+function updateWidgetVisibility(widgetType='all', visible=true) {
+    if(widgetType === 'sidebar' || widgetType === 'all'){
+        const sidebarWidgetContainer = document.getElementById("claude-site-tools-sidebar-container");
+        sidebarWidgetContainer.style.display = visible ? "block" : "none";
+    }
+    if(widgetType === 'bottom-toolbar' || widgetType === 'all'){
+        const bottomToolbarWidgetContainer = document.getElementById("toolbar-circular-usage-container");
+        bottomToolbarWidgetContainer.style.display = visible ? "flex" : "none";
+    }
+}
+
 function updateUsageUI() {
     ensureUIInjected();
     fetchOrganizationID().then((orgID) => {

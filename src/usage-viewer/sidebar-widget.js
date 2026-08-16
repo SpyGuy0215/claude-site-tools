@@ -46,35 +46,32 @@ function injectSidebarUsageBar() {
         "[CLAUDE SITE TOOLS] Custom UI injected into claude.ai sidebar.",
     );
 
-    updateWidgetVisibility("sidebar");
+    updateSidebarWidgetVisibilityAuto();
     updateUsageUI();
 }
 
-function updateWidgetVisibility(widgetType) {
-    if (widgetType === "sidebar") {
-        const sidebarContainer = document.getElementById(
-            "claude-site-tools-sidebar-container",
+function updateSidebarWidgetVisibilityAuto() {
+    const sidebarContainer = document.getElementById(
+        "claude-site-tools-sidebar-container",
+    );
+    const sidebarNav = document.querySelector("[aria-label='Sidebar' i]");
+    console.log(
+        "[CLAUDE SITE TOOLS] Sidebar navigation element found:",
+        sidebarNav,
+    );
+    if (!sidebarNav) {
+        console.error(
+            "[CLAUDE SITE TOOLS] Sidebar navigation element not found.",
         );
-        const sidebarNav = document.querySelector("[aria-label='Sidebar' i]");
-        console.log(
-            "[CLAUDE SITE TOOLS] Sidebar navigation element found:",
-            sidebarNav,
-        );
-        if (!sidebarNav) {
-            console.error(
-                "[CLAUDE SITE TOOLS] Sidebar navigation element not found.",
-            );
-            return;
-        }
-        const isClosed =
-            sidebarNav && sidebarNav.hasAttribute("data-find-omitted");
-        console.log(
-            "[CLAUDE SITE TOOLS] Sidebar visibility changed. Is closed:",
-            isClosed,
-        );
-        if (sidebarContainer) {
-            sidebarContainer.style.display = isClosed ? "none" : "block";
-        }
+        return;
+    }
+    const isClosed = sidebarNav && sidebarNav.hasAttribute("data-find-omitted");
+    console.log(
+        "[CLAUDE SITE TOOLS] Sidebar visibility changed. Is closed:",
+        isClosed,
+    );
+    if (sidebarContainer) {
+        sidebarContainer.style.display = isClosed ? "none" : "block";
     }
 }
 
@@ -101,7 +98,7 @@ function initSidebarObserver() {
                     mutation.type === "attributes" &&
                     mutation.attributeName === "data-find-omitted"
                 ) {
-                    updateWidgetVisibility("sidebar");
+                    updateSidebarWidgetVisibilityAuto();
                 }
             }
         },

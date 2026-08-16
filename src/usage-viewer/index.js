@@ -2,13 +2,14 @@
 
 function initUsageViewer() {
     injectCustomUI();
-    updateWidgetVisibility("sidebar");
+    // Check if sidebar is present and open/closed
+    updateSidebarWidgetVisibilityAuto();
     initSidebarObserver();
 
     let resizeTimeout = null;
-    window.addEventListener("resize", () => {
+    window.addEventListener("resize", () => {``
         console.log("Window resized.");
-        updateWidgetVisibility("sidebar");
+        updateSidebarWidgetVisibilityAuto();
         if (resizeTimeout) {
             clearTimeout(resizeTimeout);
         }

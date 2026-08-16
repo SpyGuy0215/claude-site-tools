@@ -17,6 +17,11 @@
         }
     },
 
+    "action": {
+        "default_title": "Claude Site Tools",
+        "default_popup": "src/popup.html"
+    },
+
     "background": {
         "service_worker": "src/background.js",
         "scripts": [

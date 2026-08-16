@@ -1,3 +1,4 @@
+const CURRENT_SCHEMA_VERSION = 1;
 console.log("[CLAUDE SITE TOOLS] 🚀 Background script loaded.");
 
 // Listen to the HTTP completion stream
@@ -22,3 +23,19 @@ chrome.webRequest.onCompleted.addListener(
         ],
     },
 );
+
+// Handle settings schema migration
+chrome.runtime.onInstalled.addListener(async (details) => {
+    if (details.reason === "install" || details.reason === "update") {
+        await migrateSettings();
+    }
+});
+
+async function migrateSettings() {
+    const { settings, schemaVersion } = await chrome.storage.local.get([
+        "settings",
+        "schemaVersion",
+    ]);
+    if (schemaVersion == CURRENT_SCHEMA_VERSION) return;
+    // In case of future schema changes, migrations can be handled sequentially here
+}
