@@ -20,6 +20,7 @@ chrome.webRequest.onCompleted.addListener(
     {
         urls: [
             "https://claude.ai/api/organizations/*/chat_conversations/*/completion*",
+            "https://claude.ai/api/completion*",
         ],
     },
 );

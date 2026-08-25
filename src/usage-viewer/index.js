@@ -1,6 +1,7 @@
 // Usage-viewer feature entry point
 
 function initUsageViewer() {
+    initCompletionUsageListener();
     injectCustomUI();
     // Check if sidebar is present and open/closed
     updateSidebarWidgetVisibilityAuto();

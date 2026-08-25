@@ -79,7 +79,7 @@ function injectBottomToolbarUsageCircle() {
 
     const bottomToolbarModelPicker = bottomToolbar
         .querySelector("[aria-label*='Model' i]")
-        .closest("div");
+        ?.closest("div");
     if (bottomToolbarModelPicker) {
         bottomToolbarModelPicker.after(customToolbarUsageContainer);
     } else {

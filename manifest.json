@@ -42,6 +42,12 @@
             ],
             "css": ["styles.css"],
             "run_at": "document_idle"
+        },
+        {
+            "matches": ["https://claude.ai/*"],
+            "js": ["src/completion-interceptor-main.js"],
+            "run_at": "document_start",
+            "world": "MAIN"
         }
     ]
 }
