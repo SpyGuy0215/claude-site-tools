@@ -19,7 +19,13 @@
 
     "action": {
         "default_title": "Claude Site Tools",
-        "default_popup": "src/popup.html"
+        "default_popup": "src/popup.html",
+        "default_icon": {
+            "16": "icons/favicon-96x96.png",
+            "32": "icons/favicon-96x96.png",
+            "48": "icons/favicon-96x96.png",
+            "128": "icons/favicon-96x96.png"
+        }
     },
 
     "background": {

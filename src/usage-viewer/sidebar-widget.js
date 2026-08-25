@@ -84,8 +84,8 @@ function injectSidebarUsageBar() {
     // create sidebar UI
     const customSidebarUIContainer = document.createElement("div");
     customSidebarUIContainer.style.cssText = `
-        padding-left: 1rem; 
-        padding-right: 1rem; 
+        padding-left: 0.5rem; 
+        padding-right: 0.5rem; 
         margin-top: 1rem;
         color: #c3c2b7; 
     `;
@@ -105,7 +105,9 @@ function injectSidebarUsageBar() {
     customSidebarUIContainer.id = "claude-site-tools-sidebar-container";
 
     // add custom UI to the sidebar
-    chatsContainer.before(customSidebarUIContainer);
+    const chatsBox = [...chatsContainer.querySelectorAll("*")].filter((el) => el.textContent.includes("Chats"))[0];
+    if(!chatsBox || chatsBox.length === 0) chatsContainer.before(customSidebarUIContainer);
+    else chatsBox.before(customSidebarUIContainer);
     console.log(
         "[CLAUDE SITE TOOLS] Custom UI injected into claude.ai sidebar.",
     );
